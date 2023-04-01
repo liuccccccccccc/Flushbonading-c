@@ -7,7 +7,7 @@ void stack_flow()
 
 void apart_Number(int number)
 {
-    if(number>9)
+    if(number>9)//递归的出口
     {
       apart_Number(number/10);
     }
