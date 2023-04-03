@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "stdlib.h": "c",
-        "Escape_Character.C": "cpp"
+        "Escape_Character.C": "cpp",
+        "Two-Dimension.C": "cpp"
     }
 }
