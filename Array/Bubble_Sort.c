@@ -35,7 +35,7 @@ int main()
         {
             break;
         }
-        i++;
+        i++; 
         count++; 
     }
     printf("数组中的元素为：");
