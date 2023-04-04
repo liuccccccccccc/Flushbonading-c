@@ -2,6 +2,7 @@
     "files.associations": {
         "stdlib.h": "c",
         "Escape_Character.C": "cpp",
-        "Two-Dimension.C": "cpp"
+        "Two-Dimension.C": "cpp",
+        "random": "c"
     }
 }
