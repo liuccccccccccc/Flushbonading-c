@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include<time.h>
+#include <time.h>
 #define ROW 3
 #define COL 3
 void menu()
 {
-    printf("************************\n");
-    printf("****1         进入游戏***\n");
-    printf("****0         退出游戏***\n");
-    printf("************************\n");
+    printf("********************\t\n");
+    printf("**1       进入游戏**\t\n");
+    printf("**0       退出游戏**\t\n");
+    printf("********************\t\n");
 }
 
 void init(char chessBoard[][ROW], int col, int row) // 初始化数组内容
@@ -53,56 +53,56 @@ int judgeCoordinateNull(char chessBoard[][ROW], int x, int y) // 检测坐标的
     }
     return 0;
 }
-int JudgePlayerWin(char chessBoard[][ROW], int col, int row)
+int JudgePlayerWin(char chessBoard[][ROW], int col, int row)//判断玩家胜利函数
 {
 
     for (int i = 0; i < col; i++)
     {
-        if (((chessBoard[i][0] == '*') && (chessBoard[i][1] == '*') && (chessBoard[i][2] == '*')))
+        if (((chessBoard[i][0] == 'O') && (chessBoard[i][1] == 'O') && (chessBoard[i][2] == 'O')))
         {
             return 1;
         }
     }
     for (int b = 0; b < row; b++)
     {
-        if (((chessBoard[0][b] == '*') && (chessBoard[1][b] == '*') && (chessBoard[2][b] == '*')))
+        if (((chessBoard[0][b] == 'O') && (chessBoard[1][b] == 'O') && (chessBoard[2][b] == 'O')))
         {
             return 1;
         }
     }
-    if (((chessBoard[0][0] == '*') && (chessBoard[1][1] == '*') && (chessBoard[2][2] == '*')))
+    if (((chessBoard[0][0] == 'O') && (chessBoard[1][1] == 'O') && (chessBoard[2][2] == 'O')))
     {
         return 1;
     }
-    if (((chessBoard[0][2] == '*') && (chessBoard[1][1] == '*') && (chessBoard[2][0] == '*')))
+    if (((chessBoard[0][2] == 'O') && (chessBoard[1][1] == 'O') && (chessBoard[2][0] == 'O')))
     {
         return 1;
     }
     return 0;
 }
 
-int JudgeAIWin(char chessBoard[][ROW], int col, int row)
+int JudgeAIWin(char chessBoard[][ROW], int col, int row)//判断电脑胜利函数
 {
 
     for (int i = 0; i < col; i++)
     {
-        if (((chessBoard[i][0] == '#') && (chessBoard[i][1] == '#') && (chessBoard[i][2] == '#')))
+        if (((chessBoard[i][0] == 'X') && (chessBoard[i][1] == 'X') && (chessBoard[i][2] == 'X')))
         {
             return 1;
         }
     }
     for (int b = 0; b < row; b++)
     {
-        if (((chessBoard[0][b] == '#') && (chessBoard[1][b] == '#') && (chessBoard[2][b] == '#')))
+        if (((chessBoard[0][b] == 'X') && (chessBoard[1][b] == 'X') && (chessBoard[2][b] == 'X')))
         {
             return 1;
         }
     }
-    if (((chessBoard[0][0] == '#') && (chessBoard[1][1] == '#') && (chessBoard[2][2] == '#')))
+    if (((chessBoard[0][0] == 'X') && (chessBoard[1][1] == 'X') && (chessBoard[2][2] == 'X')))
     {
         return 1;
     }
-    if (((chessBoard[0][2] == '#') && (chessBoard[1][1] == '#') && (chessBoard[2][0] == '#')))
+    if (((chessBoard[0][2] == 'X') && (chessBoard[1][1] == 'X') && (chessBoard[2][0] == 'X')))
     {
         return 1;
     }
@@ -124,17 +124,19 @@ int main()
         {
         case 1:
             Print(ChessBoard, COL, ROW);
+            int count = 0;//计算下棋的步数，判断棋盘是否满了
             while (1)
             {
                 int x = 0, y = 0;
-                int count=0;
+
                 while (1)
                 {
                     printf("输入坐标下棋\n");
                     scanf("%d %d", &x, &y);
                     if (judgeCoordinateNull(ChessBoard, x, y) == 0)
                     {
-                        ChessBoard[x - 1][y - 1] = '*';count++;
+                        ChessBoard[x - 1][y - 1] = 'O';
+                        count++;
                         break;
                     }
                     else
@@ -149,30 +151,34 @@ int main()
                     system("pause");
                     break;
                 }
-                if(count==9)
+                if (count == 9)
                 {
-                    printf("和局\n");break;
+                    printf("和局\n");
+                    break;
                 }
-                while(1)
+                printf("电脑下棋中........\n");
+                while (1)
                 {
-                    srand((unsigned int)time(NULL));; // 根据时间当做每次生成随机数的种子，确保每次生成的随机数不一样
-                    x = (rand() % 4)+1 ;
-                    y = (rand() % 4)+1;
+                    srand((unsigned int)time(NULL));
+                    ; // 根据时间当做每次生成随机数的种子，确保每次生成的随机数不一样
+                    x = (rand() % 4) + 1;
+                    y = (rand() % 4) + 1;
                     if (judgeCoordinateNull(ChessBoard, x, y) == 0)
                     {
-                        ChessBoard[x - 1][y - 1] = '#';count++;
+                        ChessBoard[x - 1][y - 1] = 'X';
+                        count++;
                         break;
                     }
                 }
+
                 printf("电脑下棋\n");
                 Print(ChessBoard, COL, ROW);
-               if (JudgeAIWin(ChessBoard, ROW, COL) == 1)
+                if (JudgeAIWin(ChessBoard, ROW, COL) == 1)
                 {
                     printf("电脑胜利！\n");
                     system("pause");
                     break;
                 }
-
             }
 
             break;
