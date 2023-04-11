@@ -43,7 +43,7 @@ int removeDuplicates(int* nums, int numsSize){
 // }
 int main()
 {
-    int nums[11]={1,2,2,3,3,5,5,5,5,5,5};
+    int nums[11]={1,2,2,3,3,5,5,5,5,5,5,5,5,5,5,5};
     int length=removeDuplicates(nums,11);
     for(int i=0;i<length;i++)
     {
