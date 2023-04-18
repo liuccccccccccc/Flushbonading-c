@@ -3,6 +3,7 @@
         "stdlib.h": "c",
         "Escape_Character.C": "cpp",
         "Two-Dimension.C": "cpp",
-        "random": "c"
+        "random": "c",
+        "YANGHUItriangle.C": "cpp"
     }
 }
