@@ -18,7 +18,7 @@ float CallBack(float (*p)(float, float))
     printf("请输入两个数\n");
     scanf("%f %f", &a, &b);
     return p(a, b);//通过函数指针调用函数。函数和函数间的实参传入到形参，然后通过函数指针(形参）,这样的就是回调函数，指的是被调用的函数。
-}
+}//因为p=&函数名=函数名，所以可以直接通过指针调用。不用解引用
 int main()
 {
     int input;
@@ -29,10 +29,10 @@ int main()
         switch (input)
         {
         case 1:
-            printf("和为%f\n", CallBack(Add));
+            printf("和为%f\n", CallBack(&Add));//函数的名字和取地址是等价的，
             break;
         case 2:
-            printf("差为%f\n", CallBack(Sub));
+            printf("差为%f\n", CallBack(&Sub));
             break;
         case 3:
             printf("积为%f\n", CallBack(Mul));
