@@ -16,7 +16,7 @@ int Max(int a, int b)
         temp--;
     }
     return temp;
-}
+} 
 int main()
 {
     int a, b;
