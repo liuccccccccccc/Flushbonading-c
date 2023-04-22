@@ -9,7 +9,7 @@ int main()
         {
             printf("0\n");
         }
-    }
+    } 
     int bb = 0;
     for (int ii = 0; ii < 3; ii++)
     {
