@@ -15,7 +15,7 @@ int binSearch(int x, int v[], int n)
         }
     }
     return i;
-}
+} 
 int main()
 {
     int array[100] = {0}, n = 0, x = 0;
