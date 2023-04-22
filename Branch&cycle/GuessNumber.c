@@ -33,7 +33,7 @@ void Guess(int i)
                     printf("你输入的数字不在范围内\n");
                 }
             }
-        }
+        } 
         break;
     case 2:
     {
