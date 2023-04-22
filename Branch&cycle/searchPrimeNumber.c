@@ -23,7 +23,7 @@ void searchPrimeNumber(int a, int b) // 传入要判断的区间
         printf("%d ", i);
         count++;
       }
-    }
+    } 
   }
   printf("\n");
   printf("共有素数%d个\n", count);
