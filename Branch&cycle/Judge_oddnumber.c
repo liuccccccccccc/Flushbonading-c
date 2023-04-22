@@ -14,7 +14,7 @@ void Judge(int a, int b)
       a++;
     }
   }
-}
+} 
 int main()
 {
   Judge(1, 100);
