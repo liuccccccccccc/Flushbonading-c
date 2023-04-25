@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-//使用冒泡交换法，来判断一个字符串是否为另外一个字符串的翻转。
+//使用冒泡交换法，来判断一个字符串是否为另外一个字符串的翻转。//穷举法
 int judgeSpin(char *a, char *b)
 {
     int l = strlen(a);
