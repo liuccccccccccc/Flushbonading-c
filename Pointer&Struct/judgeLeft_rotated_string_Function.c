@@ -3,7 +3,7 @@
 #include <string.h>
 int Judge(char *a, char *b) // 使用库函数来判断一个字符串是否为另外一个字符串转置。例如：将字符串ABCD变成ABCDABCD，通过判断另外一个字符串是否为该字符串的子串并且长度是否字符串的长度来判断。
 {
-    strncat(a, a, strlen(a));                               // strncat追加字符串的内容。在a追加b字符串的前n个字符
+    strncat(a, a, strlen(a));                               // strncat追加字符串的内容。在a追加b字符串的前n个字；符
     if (strstr(a, b) != NULL && strlen(b) == strlen(a) / 2) // strstr函数用来返回字串b在字符串a中的首位置，如果不是找不到，就返回空。
     {
         return 1;
