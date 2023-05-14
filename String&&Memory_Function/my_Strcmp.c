@@ -16,18 +16,31 @@ int MyStrcmp(const char *a, const char *b) // 实现库函数strcmp
 {
     assert(a != NULL);
     assert(b != NULL);
-    int i;
-    i = MyStrlen(a) <= MyStrlen(b) ? MyStrlen(a) : MyStrlen(b);
-    for (int j = 0; j < i + 1; j++)
+    // int i;
+    // i = MyStrlen(a) <= MyStrlen(b) ? MyStrlen(a) : MyStrlen(b);
+    // for (int j = 0; j < i + 1; j++)
+    // {
+    //     if (a[j] > b[j])
+    //     {
+    //         return 1;
+    //     }
+    //     else if (a[j] < b[j])
+    //     {
+    //         return -1;
+    //     }
+    // }
+    while(*(a)||*(b))//改进算法，比较两个字符串，考虑相等时循环结束条件，当两个指针同时指向'\0'时，字符串相等，此时循环结束，返回值为0
     {
-        if (a[j] > b[j])
+        if(*a>*b)
         {
             return 1;
         }
-        else if (a[j] < b[j])
+        else if(*a<*b)
         {
-            return -1;
+            return  -1;
         }
+        a++;
+        b++;
     }
     return 0;
 }
