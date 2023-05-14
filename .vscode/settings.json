@@ -4,6 +4,8 @@
         "Escape_Character.C": "cpp",
         "Two-Dimension.C": "cpp",
         "random": "c",
-        "YANGHUItriangle.C": "cpp"
+        "YANGHUItriangle.C": "cpp",
+        "string.h": "c",
+        "assert.h": "c"
     }
 }
