@@ -33,6 +33,7 @@ void judge2(int i)
     {
         printf("大端存储\n");
     }
+    
 
 }
 int main()
