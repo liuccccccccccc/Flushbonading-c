@@ -6,6 +6,17 @@ struct A{
     char a;
     int j;
 };
+struct E
+{
+    char a[5];//对于数组，其对齐数，为其中一个元素的对齐数。
+    int b;
+};
+struct F
+{
+    
+    char i;
+    int a[4];
+};
 struct B
 {
     int i;
@@ -25,7 +36,7 @@ struct  C//自定义位段，：后指的是变量的大小，单位是bit。
 
 int main()
 {
-    printf("%d %d %d",sizeof(struct A),sizeof(struct B),sizeof(struct C));
+    printf("%d %d %d %d",sizeof(struct A),sizeof(struct B),sizeof(struct F),sizeof(struct E));
     system("pause");
     return 0;
 }
