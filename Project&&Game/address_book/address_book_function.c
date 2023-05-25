@@ -90,6 +90,7 @@ int dele_function(Mess *member, const char *ptele, int *pnumber) // 删除联系
             strcpy((p + i)->sex, (p + i + 1)->sex);
             (p + i)->age = (p + i + 1)->age;
         }
+        Mess* p = search_function(member, ptele, *pnumber);//将删除后多余的项给赋为0
         (*pnumber)--;
         return 1;
     }
