@@ -11,10 +11,8 @@ void reverseString(const char *a)
     while (pop < inp)
     {
         char temp = *pop;
-        *pop = *inp;
-        *inp = temp;
-        pop++;
-        inp--;
+        *pop++ = *inp;
+        *inp-- = temp; 
     }
 }
 int main()
