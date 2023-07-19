@@ -12,16 +12,20 @@ void reverseString(const char *a)
     {
         char temp = *pop;
         *pop++ = *inp;
-        *inp-- = temp; 
+        *inp-- = temp;
     }
 }
 int main()
 {
-    char a[100];
-    gets(a);
-    printf("倒置前%s\n", a);
-    reverseString(a);
-    printf("倒置后%s\n", a);
+    while (1)
+    {
+
+        char a[100];
+        gets(a);
+        printf("倒置前%s\n", a);
+        reverseString(a);
+        printf("倒置后%s\n", a);
+    }
     system("pause");
     return 0;
 }
