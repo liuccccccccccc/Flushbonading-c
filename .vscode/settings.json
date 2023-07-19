@@ -6,6 +6,7 @@
         "random": "c",
         "YANGHUItriangle.C": "cpp",
         "string.h": "c",
-        "assert.h": "c"
+        "assert.h": "c",
+        "limits": "c"
     }
 }
