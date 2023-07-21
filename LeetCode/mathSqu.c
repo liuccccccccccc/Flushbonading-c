@@ -3,7 +3,7 @@
 int mathSqu(int n)
 {
 
-    // for (long i = n; i >= 1; n--)
+    // for (long i = n; i >= 1; n--)//弱智算法，思想没错但太耗时。
     // {
     //     for (long j = 1; j <= n / 2; j++)
     //     {
@@ -14,7 +14,7 @@ int mathSqu(int n)
     //     }
     // }
     // return 1;
-    for(long i=1;i<=(n/2+1);i++)
+    for(long i=1;i<=(n/2+1);i++)//改进算法
     {
         if(n<i*i)
         {
