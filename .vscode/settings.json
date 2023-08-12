@@ -7,6 +7,7 @@
         "YANGHUItriangle.C": "cpp",
         "string.h": "c",
         "assert.h": "c",
-        "limits": "c"
+        "limits": "c",
+        "missNum.C": "cpp"
     }
 }
