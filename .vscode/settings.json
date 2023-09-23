@@ -8,6 +8,7 @@
         "string.h": "c",
         "assert.h": "c",
         "limits": "c",
-        "missNum.C": "cpp"
+        "missNum.C": "cpp",
+        "stdio.h": "c"
     }
 }
