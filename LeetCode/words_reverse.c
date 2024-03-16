@@ -1,40 +1,48 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-int main(int argc, const char *argv[])
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+void word_reverse(char *s)
 {
-	char a[20];
-	gets(a);
-	int t;
-	for(int i=0,l=strlen(a)-1;i<strlen(a)/2;i++,l--)
+	int i=0,j=0,t;
+	while(s[j++]!='\0');
+	j=j-2;
+	while(i<j)
 	{
-		t=a[i];
-		a[i]=a[l];
-		a[l]=t;
+		t=s[i];
+		s[i]=s[j];
+		s[j]=t;
+		i++;
+		j--;
 	}
-	printf("%s\n",a);
-	int i=0,k=0,j=0;
-	while(a[i]!='\0')
+	i=0,j=0;
+	int k=0;
+	printf("%s\n",s);
+	while(s[k]!='\0')
 	{
-		while(a[k]!=' '&&a[k]!='\0')
+		while(s[j]!=' '&&s[j]!='\0')
 		{
-			k++;
+			j++;
 		}
-		j=k-1;
+		j=j-1;
+		k=j;
 		while(i<j)
 		{
-			t=a[i];
-			a[i]=a[j];
-			a[j]=t;
+			t=s[i];
+			s[i]=s[j];
+			s[j]=t;
 			i++;
 			j--;
 		}
-		while(a[k]==' ')
-		{
-			k++;
-		}
-		i=k;
+		while(s[k++]==' ');
+		k=k-1;
+		i=k,j=k;
 	}
-	printf("%s\n",a);
+}
+int main(int argc, const char *argv[])
+{   
+	char a[20];
+	gets(a);
+	word_reverse(a);
+	puts(a);
 	return 0;
 }
